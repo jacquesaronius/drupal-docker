@@ -1,0 +1,19 @@
+version: 3.7
+services:
+        web:
+            image: drupal:8
+            ports: 
+                - "8080:80"
+            volumes:
+                - ./code/modules:/var/www/html/modules
+                - ./code/themes:/var/www/html/themes
+                - ./code/profiles:/var/www/html/profiles
+        db:
+            environment: 
+                - NAME=db
+                - MYSQL_ROOT_PASSWORD=p@ssw0rd
+                - MYSQL_DATABASE=drupal
+                - MYSQL_USER=user
+                - MYSQL_PASSWORD=p@ssw0rd
+            image: mysql:5.7
+            ports: "3306:3306"
