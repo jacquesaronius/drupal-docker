@@ -10,6 +10,7 @@ services:
                 - ./code/profiles:/opt/drupal/web/profiles
                 - ./contrib/modules:/opt/drupal/web/modules/contrib
                 - ./contrib/themes:/opt/drupal/web/themes/contrib
+                - ./sites/default/files:/opt/drupal/web/sites/default/files
         db:
             environment: 
                 - NAME=db
